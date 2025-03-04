@@ -1,5 +1,6 @@
 var http = require("http")
 var url = require("url")
+var sdb = require("./serverdatabase")
 
 http.createServer(async(req,res)=>{
     console.log("react view to server controller")
@@ -18,6 +19,20 @@ http.createServer(async(req,res)=>{
     console.log(typeof(finaldata.rno))
     console.log(finaldata.sname)
     console.log(finaldata.mark)
+
+    try{
+        res.writeHead(200,{"content-type":"application/json"})
+        var resdata = await sdb.insertfun(finaldata)
+        var finalans = JSON.parse(JSON.stringify(resdata))
+        res.write(finalans) // move to view react
+    }
+    catch{
+        console.log("error from db")
+    }
+    finally{
+        console.log("Program end")
+        res.end()
+    }
 }).listen(1234)
 
 console.log("port listening at 1234")
