@@ -1,7 +1,7 @@
 var http = require("http")
 var url = require("url")
-var sdb = require("./serverdatabase")
-
+// var sdb = require("./serverdatabase")
+var sdb = require("./servercloud")    //connection to mongoatlas
 http.createServer(async(req,res)=>{
     console.log("react view to server controller")
 
