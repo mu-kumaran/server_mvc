@@ -1,7 +1,7 @@
 var http = require("http")
 var url = require("url")
-// var sdb = require("./serverdatabase")
-var sdb = require("./servercloud")    //connection to mongoatlas
+var sdb = require("./serverdatabase")
+//var sdb = require("./servercloud")    //connection to mongoatlas
 http.createServer(async(req,res)=>{
     console.log("react view to server controller")
 
@@ -23,7 +23,9 @@ http.createServer(async(req,res)=>{
     try{
         res.writeHead(200,{"content-type":"application/json"})
         var resdata = await sdb.insertfun(finaldata)
+        console.log(resdata)
         var finalans = JSON.parse(JSON.stringify(resdata))
+        console.log(finalans)
         res.write(finalans) // move to view react
     }
     catch{

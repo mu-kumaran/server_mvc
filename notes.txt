@@ -1,0 +1,19 @@
+# Server - mvc
+
+- In server-mvc two files will be available
+    1. servercontroller.js
+    2. serverdatabase.js (for local connection) or servercloud.js (for cloud connection using mongo atlas)
+- controller server should be activated for backend process
+
+- For activating the controller server
+    servercontroller.js should be run using the command
+    >> node servercontroller.js
+
+Initial output: port listening at given port number
+
+note:
+For importing local mongodb database server in controller file
+var sdb = require(./serverdatabase)
+
+for importing cloud mongo atlas server in controller file
+var sdb = require(./servercloud)
