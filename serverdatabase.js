@@ -2,7 +2,7 @@ var {MongoClient} = require("mongodb")
 var client = new MongoClient("mongodb://127.0.0.1:27017/")
 client.connect()
 
-async function insertfun(inputdata){
+async function insertdata(inputdata){
 try
 {
     var dataset = await client.db("manoj").collection("student").insertOne(inputdata)
@@ -15,4 +15,4 @@ catch
 }
 }
 
-module.exports={insertfun}
+module.exports={insertdata}
