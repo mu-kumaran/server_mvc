@@ -12,8 +12,8 @@
 Initial output: port listening at given port number
 
 note:
-For importing local mongodb database server in controller file
+For importing local mongodb database server js filein controller js file
 var sdb = require(./serverdatabase)
 
-for importing cloud mongo atlas server in controller file
+for importing cloud mongo atlas server js file in controller js file
 var sdb = require(./servercloud)
